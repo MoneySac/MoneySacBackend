@@ -1,0 +1,2 @@
+module SacEntriesHelper
+end

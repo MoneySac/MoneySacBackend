@@ -1,0 +1,45 @@
+<%= form_for(@sac_entry) do |f| %>
+  <% if @sac_entry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sac_entry.errors.count, "error") %> prohibited this sac_entry from being saved:</h2>
+
+      <ul>
+      <% @sac_entry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br>
+    <%= f.number_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br>
+    <%= f.number_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :recurring %><br>
+    <%= f.check_box :recurring %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

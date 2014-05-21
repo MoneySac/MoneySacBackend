@@ -1,0 +1,37 @@
+<h1>Listing sac_entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Description</th>
+      <th>Amount</th>
+      <th>Category</th>
+      <th>Date</th>
+      <th>Type</th>
+      <th>Recurring</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sac_entries.each do |sac_entry| %>
+      <tr>
+        <td><%= sac_entry.id %></td>
+        <td><%= sac_entry.description %></td>
+        <td><%= sac_entry.amount %></td>
+        <td><%= sac_entry.category_id %></td>
+        <td><%= sac_entry.date %></td>
+        <td><%= sac_entry.type_id %></td>
+        <td><%= sac_entry.recurring %></td>
+        <td><%= link_to 'Show', sac_entry %></td>
+        <td><%= link_to 'Edit', edit_sac_entry_path(sac_entry) %></td>
+        <td><%= link_to 'Destroy', sac_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sac entry', new_sac_entry_path %>

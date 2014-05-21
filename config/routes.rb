@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :sac_entries
+
+  resources :categories
+
   resources :accounts
 
   get 'user/hello'
