@@ -1,6 +1,6 @@
-<h1>Listing sac_entries</h1>
+<h1>Sac_entries</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Id</th>
@@ -24,9 +24,9 @@
         <td><%= sac_entry.date %></td>
         <td><%= sac_entry.type_id %></td>
         <td><%= sac_entry.recurring %></td>
-        <td><%= link_to 'Show', sac_entry %></td>
-        <td><%= link_to 'Edit', edit_sac_entry_path(sac_entry) %></td>
-        <td><%= link_to 'Destroy', sac_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', sac_entry, :class => "btn btn-default" %></td>
+        <td><%= link_to 'Edit', edit_sac_entry_path(sac_entry), :class => "btn btn-default" %></td>
+        <td><%= link_to 'Delete', sac_entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Sac entry', new_sac_entry_path %>
+<%= link_to 'New Sac entry', new_sac_entry_path, :class => "btn btn-default" %>
