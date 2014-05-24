@@ -11,14 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140522083254) do
+ActiveRecord::Schema.define(version: 20140521094811) do
 
-  create_table "accounts", force: true do |t|
-    t.string   "user"
-    t.integer  "amount"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -30,12 +26,12 @@ ActiveRecord::Schema.define(version: 20140522083254) do
   create_table "sac_entries", force: true do |t|
     t.string   "description"
     t.decimal  "amount"
+    t.integer  "category_id"
     t.date     "date"
     t.integer  "type_id"
     t.boolean  "recurring"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
   end
 
 end
