@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  get 'welcome/features'
+  get 'welcome/contact'
 
   resources :sac_entries
 
   resources :categories
-
-  get 'user/hello'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
