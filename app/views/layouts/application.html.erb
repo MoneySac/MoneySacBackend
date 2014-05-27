@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SampleApp2</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <!--%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> -->
-  <%= csrf_meta_tags %>
+	
+	<!-- allow every controller/page to load is own stylesheets -->
+	<% if content_for? :for_head %>
+	<%= yield :for_head %>
+	<% end %>
+
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<!--%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> -->
+	<%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+			<%= yield %>
 
 </body>
 </html>

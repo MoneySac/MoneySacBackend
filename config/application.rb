@@ -20,5 +20,8 @@ module SampleApp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    # render all individual css files. 
+    # needed that every controller can have his own stylesheet.
+    config.assets.precompile << "*.css"
   end
 end
