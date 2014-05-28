@@ -14,3 +14,8 @@
  *= require_self
  */
 @import "bootstrap";
+
+#auth-banner{
+	position: relative;
+	z-index: 50;
+}

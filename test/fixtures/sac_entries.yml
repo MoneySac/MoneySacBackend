@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
-  description: MyString
+  id: 1003
+  description: firstSacEntry
   amount: 9.99
-  category_id: 1
+  category_id: 1005
   date: 2014-05-21
   type_id: 1
   recurring: false
 
 two:
-  id: 1
-  description: MyString
+  id: 1004
+  description: secondSacEntry
   amount: 9.99
-  category_id: 1
-  date: 2014-05-21
-  type_id: 1
-  recurring: false
+  category_id: 1006
+  date: 2014-05-22
+  type_id: 2
+  recurring: true

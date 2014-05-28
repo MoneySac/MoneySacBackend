@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
-  name: MyString
+  id: 1005
+  name: firstCategory
   type_id: 1
 
 two:
-  id: 1
-  name: MyString
-  type_id: 1
+  id: 1006
+  name: secondCategory
+  type_id: 2
