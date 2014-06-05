@@ -23,10 +23,20 @@
     <%= f.label :amount %><br>
     <%= f.text_field :amount %>
   </div>
-  <div class="field">
+  <!--<div class="field">
     <%= f.label :category_id %><br>
     <%= f.number_field :category_id %>
+  </div>-->
+  <div class="form_row">
+  <%= Category %>
+      <% Category.find_each do |category|  %>
+      <br>
+      <%= radio_button_tag 'category', category.name  %>
+      <%= f.label category.name %>
+      <% end %>
+
   </div>
+
   <div class="field">
     <%= f.label :date %><br>
     <%= f.date_select :date %>
