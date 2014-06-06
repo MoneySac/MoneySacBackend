@@ -30,7 +30,7 @@
   <div class="field">
   <%= Category %>
       <br>
-      <%= select_tag(:category_select, options_from_collection_for_select(@category, "id", "name")) %>
+      <%= f.select :category_id, @options %>
   </div>
 
   <div class="field">
