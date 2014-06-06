@@ -27,12 +27,12 @@
     <%= f.label :category_id %><br>
     <%= f.number_field :category_id %>
   </div>-->
-  <div class="form_row">
+  <div class="field">
   <%= Category %>
-      <% Category.find_each do |category|  %>
+      <% @category.each do |next_category|  %>
       <br>
-      <%= radio_button_tag 'category', category.name  %>
-      <%= f.label category.name %>
+      <%= radio_button_tag 'category', next_category.id  %>
+      <%= f.label next_category.name %>
       <% end %>
 
   </div>

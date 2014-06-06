@@ -15,10 +15,12 @@ class SacEntriesController < ApplicationController
   # GET /sac_entries/new
   def new
     @sac_entry = SacEntry.new
+    @category = Category.all
   end
 
   # GET /sac_entries/1/edit
   def edit
+    @category = Category.all
   end
 
   # POST /sac_entries

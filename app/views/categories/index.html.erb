@@ -23,7 +23,7 @@
         <td><%= category.type_id %></td>
         <td><%= link_to 'Show', category, :class => "btn btn-default" %></td>
         <td><%= link_to 'Edit', edit_category_path(category), :class => "btn btn-default" %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %></td>
+        <td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %></td>
       </tr>
     <% end %>
   </tbody>
