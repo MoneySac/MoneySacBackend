@@ -29,12 +29,8 @@
   </div>-->
   <div class="field">
   <%= Category %>
-      <% @category.each do |next_category|  %>
       <br>
-      <%= radio_button_tag 'category', next_category.id  %>
-      <%= f.label next_category.name %>
-      <% end %>
-
+      <%= select_tag(:category_select, options_from_collection_for_select(@category, "id", "name")) %>
   </div>
 
   <div class="field">
