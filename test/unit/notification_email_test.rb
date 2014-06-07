@@ -6,9 +6,9 @@ class NotificationMailerTest < ActionMailer::TestCase
   test "notification_email" do
  
     expected = new_mail
-    expected.from    = 'info@postbox.tut'
-    expected.to      = 'somelist@postbox.tut'
-    expected.subject = "New Notification"
+    expected.from    = "money@sac.xxx"
+    expected.to      = "yoyo@dat.com"
+    expected.subject = "now suck it"
     expected.date    = Time.now
  
     actual = nil
