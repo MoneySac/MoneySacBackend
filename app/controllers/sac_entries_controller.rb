@@ -1,5 +1,6 @@
 class SacEntriesController < ApplicationController
   before_action :set_sac_entry, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /sac_entries
   # GET /sac_entries.json
