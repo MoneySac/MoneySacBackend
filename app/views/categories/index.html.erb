@@ -3,10 +3,7 @@
   <title>Categories</title>
 <% end %>
 
-<div id="sidebar" class="col-md-1 btn-group-vertical">
-  <%= link_to 'Categories', categories_path, :class => 'btn btn-info', :type => 'button'   %>
-  <%= link_to 'SacEntries', sac_entries_path, :class => 'btn btn-default', :type => 'button'   %>
-</div>
+<%= render "layouts/sidebar" %>
 
 <div class="col-md-11">
 <h1>Listing categories</h1>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/overview'
+
   resources :notifications
 
   devise_for :users
