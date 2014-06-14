@@ -1,8 +1,11 @@
 require 'test_helper'
+include Devise::TestHelpers
 
 class CategoriesControllerTest < ActionController::TestCase
   setup do
     @category = categories(:one)
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do
@@ -18,7 +21,7 @@ class CategoriesControllerTest < ActionController::TestCase
 
   test "should create category" do
     assert_difference('Category.count') do
-      post :create, category: { id: @category.id, name: @category.name, type_id: @category.type_id }
+      post :create, category: { name: @category.name, type_id: @category.type_id }
     end
 
     assert_redirected_to category_path(assigns(:category))
