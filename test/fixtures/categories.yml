@@ -9,3 +9,8 @@ two:
   id: 1006
   name: secondCategory
   type_id: 2
+
+three:
+  id: 1007
+  name: thirdCat
+  type_id: 3

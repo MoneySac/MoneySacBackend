@@ -4,6 +4,11 @@ include Devise::TestHelpers
 class CategoriesControllerTest < ActionController::TestCase
   setup do
     @category = categories(:one)
+    @update = {
+      id: 1009,
+      name: 'testCat',
+      type_id: 2
+    }
     @user = users(:one)
     sign_in @user
   end
@@ -21,7 +26,7 @@ class CategoriesControllerTest < ActionController::TestCase
 
   test "should create category" do
     assert_difference('Category.count') do
-      post :create, category: { name: @category.name, type_id: @category.type_id }
+      post :create, category: @update
     end
 
     assert_redirected_to category_path(assigns(:category))
@@ -38,7 +43,7 @@ class CategoriesControllerTest < ActionController::TestCase
   end
 
   test "should update category" do
-    patch :update, id: @category, category: { id: @category.id, name: @category.name, type_id: @category.type_id }
+    patch :update, id: @category, category: @update
     assert_redirected_to category_path(assigns(:category))
   end
 
