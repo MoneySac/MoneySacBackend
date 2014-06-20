@@ -3,14 +3,13 @@ include Devise::TestHelpers
 
 class CategoriesControllerTest < ActionController::TestCase
   setup do
+    @user = users(:one)
+    sign_in @user
     @category = categories(:one)
     @update = {
-      id: 1009,
       name: 'testCat',
       type_id: 2
     }
-    @user = users(:one)
-    sign_in @user
   end
 
   test "should get index" do

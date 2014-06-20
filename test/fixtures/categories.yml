@@ -1,16 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1005
   name: firstCategory
   type_id: 1
 
 two:
-  id: 1006
   name: secondCategory
   type_id: 2
 
 three:
-  id: 1007
   name: thirdCat
-  type_id: 3
+  type_id: 3		
