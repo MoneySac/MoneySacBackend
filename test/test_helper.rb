@@ -9,8 +9,6 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   fixtures :all
 
-  include Devise::TestHelpers
-
   # Add more helper methods to be used by all tests here...
     def new_mail( charset="UTF-8" )
   		mail = Mail.new
@@ -20,8 +18,5 @@ class ActiveSupport::TestCase
   		end
   		mail
 	end
-
-
-
 
 end

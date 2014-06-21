@@ -1,7 +1,10 @@
 require 'test_helper'
+include Devise::TestHelpers
 
 class NotificationsControllerTest < ActionController::TestCase
   setup do
+    @user = users(:one)
+    sign_in @user
     @notification = notifications(:one)
   end
 
