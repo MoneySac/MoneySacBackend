@@ -10,4 +10,11 @@ class SacEntryTest < ActiveSupport::TestCase
     assert sacentry.errors[:date].any?
     assert sacentry.errors[:type_id].any?
   end
+
+  test "sacentrys category_id matching works" do
+  	category = Category.all.first
+    sacentry = SacEntry.new
+    sacentry.category_id = category.id
+    assert_equal(sacentry.category_id, category.id)
+  end
 end
