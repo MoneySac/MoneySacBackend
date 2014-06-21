@@ -28,9 +28,9 @@ class SacEntriesController < ApplicationController
   def edit
     @category = Category.all
     @options = Category.all.
-   collect do |s|
-      [s.name, s.id]
-   end
+      collect do |s|
+        [s.name, s.id]
+      end
   end
 
   # POST /sac_entries
