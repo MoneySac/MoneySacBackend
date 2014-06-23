@@ -1,16 +1,15 @@
 <%= form_for(@sac_entry) do |f| %>
   <% if @sac_entry.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@sac_entry.errors.count, "error") %> prohibited this sac_entry from being saved:</h2>
-
+      <h2><%= pluralize(@sac_entry.errors.count, "error") %>
+        prohibited this sac_entry from being saved:</h2>
       <ul>
-      <% @sac_entry.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @sac_entry.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
@@ -24,11 +23,10 @@
     <%= f.number_field :category_id %>
   </div>-->
   <div class="field">
-  <%= Category %>
-      <br>
-      <%= f.select :category_id, @options %>
+    <%= Category %>
+    <br>
+    <%= f.select :category_id, @options %>
   </div>
-
   <div class="field">
     <%= f.label :date %><br>
     <%= f.date_select :date %>
