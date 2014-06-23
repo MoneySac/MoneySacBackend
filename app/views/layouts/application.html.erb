@@ -4,7 +4,10 @@
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', "data-turbolinks-track" => true %> 
 	<%= csrf_meta_tags %>
-	<title>MoneySac</title>
+		<!-- allow every controller/page to load is own stylesheets -->
+	<% if content_for? :for_head %>
+	<%= yield :for_head %>
+	<% end %>
 </head>
 <body class="<%= controller.controller_name %>">
 
