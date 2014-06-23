@@ -26,7 +26,7 @@
       <tr>
         <td><%= sac_entry.id %></td>
         <td><%= sac_entry.description %></td>
-        <td><%= sac_entry.amount %></td>
+        <td><%= number_to_currency(sac_entry.amount) %></td>
         <td><%= sac_entry.category_id %></td>
         <td><%= sac_entry.date %></td>
         <td><%= sac_entry.type_id %></td>
