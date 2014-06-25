@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'category_user/index'
+
+  get 'category_user/new'
+
+  get 'category_user/edit'
+
+  get 'category_user/delete'
+
   get 'home/overview'
 
   resources :notifications

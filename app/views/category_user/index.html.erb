@@ -1,0 +1,17 @@
+<% content_for :for_head do %>
+  <title>SacEntries</title>
+<% end %>
+<%= render "layouts/sidebar" %>
+<div class="col-md-10">
+  <h1>All available Categories</h1>
+  <div class="col-md-5">
+    <ul class="list-group">
+      <% @categories.each do |category| %>
+        <li class="list-group-item">
+          <%= category.name %>
+          <%= link_to 'Will ich!', category_user_new_path, :class => 'btn btn-success btn-xs', :type => 'button', :style => 'float:right'  %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

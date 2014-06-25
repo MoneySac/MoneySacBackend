@@ -17,4 +17,10 @@ class SacEntryTest < ActiveSupport::TestCase
     sacentry.category_id = category.id
     assert_equal(sacentry.category_id, category.id)
   end
+
+  test "sacentry must have an existing category_id" do
+    sacentry = SacEntry.new
+    sacentry.category_id = 1337
+    assert sacentry.invalid? 
+  end 
 end

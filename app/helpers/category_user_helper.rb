@@ -1,0 +1,2 @@
+module CategoryUserHelper
+end
