@@ -30,6 +30,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     @category.users << current_user
+    @category.user_id = current_user.id
 
     respond_to do |format|
       if @category.save
