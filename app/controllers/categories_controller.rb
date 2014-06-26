@@ -8,7 +8,8 @@ class CategoriesController < ApplicationController
     #@categories = Category.all
     #@category_users = User.first
     #@me = current_user
-    @categories = current_user.categories
+    #@categories = current_user.categories
+    @categories = Category.where(user_id: current_user.id)
   end
 
   # GET /categories/1
