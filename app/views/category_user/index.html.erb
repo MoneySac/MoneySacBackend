@@ -9,7 +9,11 @@
       <% @categories.each do |category| %>
         <li class="list-group-item">
           <%= category.name %>
-          <%= link_to 'Will ich!', category_user_new_path(:category_id => category), :controller => :category_user, :action => :new ,:class => 'btn btn-success btn-xs', :type => 'button', :style => 'float:right'  %>
+          <% if category.users.exists?(current_user) %>
+            <%= link_to 'Weg damit!', category_user_delete_path(:category_id => category) ,:class => 'btn btn-danger btn-xs', :type => 'button', :style => 'float:right'  %>
+          <% else %>
+            <%= link_to 'Will ich!', category_user_new_path(:category_id => category) ,:class => 'btn btn-success btn-xs', :type => 'button', :style => 'float:right'  %>
+          <% end %>
         </li>
       <% end %>
     </ul>

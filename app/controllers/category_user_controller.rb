@@ -15,5 +15,9 @@ class CategoryUserController < ApplicationController
   end
 
   def delete
+  	if Category.find(params[:category_id]).users.exists?(current_user)
+  		Category.find(params[:category_id]).users.delete(current_user)
+  	end
+  	redirect_to category_user_index_path
   end
 end
