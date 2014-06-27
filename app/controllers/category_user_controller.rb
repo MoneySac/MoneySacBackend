@@ -1,8 +1,6 @@
 class CategoryUserController < ApplicationController
   def index
-  	@all_categories = Category.all.order(:name)
-  	@categories_owned_by_user = Category.where(user_id: current_user.id)
-  	@categories = @all_categories - @categories_owned_by_user
+  	@categories = Category.all.order(:name)
   end
 
   def new

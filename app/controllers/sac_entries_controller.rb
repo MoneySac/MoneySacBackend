@@ -17,9 +17,7 @@ class SacEntriesController < ApplicationController
   # GET /sac_entries/new
   def new
     @sac_entry = SacEntry.new
-
-    # get all categories the user created
-    @categories = Category.where(user_id: current_user.id)
+    @categories = []
     # add categories the user subscribed
     Category.all.each do |c|
       @categories << c if c.users.exists?(current_user)

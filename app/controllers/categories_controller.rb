@@ -34,7 +34,6 @@ class CategoriesController < ApplicationController
     @category.user_id = current_user.id
     # add him to the category
     @category.users << current_user
-    
 
     respond_to do |format|
       if @category.save
