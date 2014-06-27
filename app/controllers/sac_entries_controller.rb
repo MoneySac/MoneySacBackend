@@ -18,7 +18,6 @@ class SacEntriesController < ApplicationController
   def new
     @sac_entry = SacEntry.new
 
-    @category = Category.all
     @options = Category.all.
    collect do |s|
       [s.name, s.id]
@@ -27,7 +26,6 @@ class SacEntriesController < ApplicationController
 
   # GET /sac_entries/1/edit
   def edit
-    @category = Category.all
     @options = Category.all.
       collect do |s|
         [s.name, s.id]
