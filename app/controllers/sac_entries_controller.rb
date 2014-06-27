@@ -17,19 +17,25 @@ class SacEntriesController < ApplicationController
   # GET /sac_entries/new
   def new
     @sac_entry = SacEntry.new
+    @categories = Category.where(user_id: current_user.id)
+    @all_categories = Category.all
+    @all_categories.each do |c|
+      if c.users.exists?(current_user)
+        @categories << c
+      end
+    end
 
-   @options = Category.where(user_id: current_user.id).
-   collect do |s|
+    @options = @categories.collect do |s|
       [s.name, s.id]
-   end
+    end
   end
 
   # GET /sac_entries/1/edit
   def edit
     @options = Category.all.
-      collect do |s|
-        [s.name, s.id]
-      end
+    collect do |s|
+      [s.name, s.id]
+    end
   end
 
   # POST /sac_entries
@@ -75,13 +81,13 @@ class SacEntriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_sac_entry
-      @sac_entry = SacEntry.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_sac_entry
+    @sac_entry = SacEntry.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def sac_entry_params
-      params.require(:sac_entry).permit(:id, :description, :amount, :category_id, :date, :type_id, :recurring)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def sac_entry_params
+    params.require(:sac_entry).permit(:id, :description, :amount, :category_id, :date, :type_id, :recurring)
+  end
 end
