@@ -18,7 +18,7 @@ class SacEntriesController < ApplicationController
   def new
     @sac_entry = SacEntry.new
 
-    @options = Category.all.
+   @options = Category.where(user_id: current_user.id).
    collect do |s|
       [s.name, s.id]
    end
