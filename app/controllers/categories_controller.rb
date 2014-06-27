@@ -30,8 +30,11 @@ class CategoriesController < ApplicationController
   # POST /categories.json
   def create
     @category = Category.new(category_params)
-    @category.users << current_user
+    # set owner to current user
     @category.user_id = current_user.id
+    # add him to the category
+    @category.users << current_user
+    
 
     respond_to do |format|
       if @category.save

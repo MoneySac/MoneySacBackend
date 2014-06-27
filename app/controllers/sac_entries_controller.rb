@@ -5,7 +5,8 @@ class SacEntriesController < ApplicationController
   # GET /sac_entries
   # GET /sac_entries.json
   def index
-    @sac_entries = SacEntry.all
+    #@sac_entries = SacEntry.all
+    @sac_entries = SacEntry.where(user_id: current_user.id)
   end
 
   # GET /sac_entries/1
@@ -37,6 +38,8 @@ class SacEntriesController < ApplicationController
   # POST /sac_entries.json
   def create
     @sac_entry = SacEntry.new(sac_entry_params)
+    # set owner to current user
+    @sac_entry.user_id = current_user.id
 
     respond_to do |format|
       if @sac_entry.save
