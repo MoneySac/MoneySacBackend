@@ -17,14 +17,13 @@ class SacEntriesController < ApplicationController
   # GET /sac_entries/new
   def new
     @sac_entry = SacEntry.new
-    @categories = Category.where(user_id: current_user.id)
-    @all_categories = Category.all
-    @all_categories.each do |c|
-      if c.users.exists?(current_user)
-        @categories << c
-      end
-    end
 
+    # get all categories the user created
+    @categories = Category.where(user_id: current_user.id)
+    # add categories the user subscribed
+    Category.all.each do |c|
+      @categories << c if c.users.exists?(current_user)
+    end
     @options = @categories.collect do |s|
       [s.name, s.id]
     end
