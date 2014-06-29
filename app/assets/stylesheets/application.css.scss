@@ -35,7 +35,7 @@
   		z-index: -1;
   
 		display: block;
-		background: image-url("background_blur2.png") no-repeat center center fixed; 
+		background: image-url("background_blur.png") no-repeat center center fixed; 
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -43,4 +43,13 @@
 
 	  }
 
+}
+
+.list-group-item,
+.btn-group-vertical>a{
+	background-color:rgba(255,255,255,0.5);
+}
+
+.table{
+	background-color:rgba(255,255,255,0.4);
 }
