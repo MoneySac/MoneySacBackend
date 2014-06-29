@@ -2,16 +2,40 @@
   <%= stylesheet_link_tag :home %>
   <title>Overview</title>
 <% end %>
-
 <%= render "layouts/sidebar" %>
 <div class="col-md-10">
-<h1>Overview</h1>
-<h3>Letzte Woche angelegt: </h3>
-<div class="col-md-5">
-	<ul class="list-group">
-		<% @recent_sacentries.each do |sac_entry| %>
-			<li class="list-group-item"> <%= sac_entry.description %> </li>
-		<% end %>
-	</ul>
-</div>
+  <h1>Overview</h1>
+  <div class="col-md-3">
+    <h5>Created last week
+    </h5>
+    <ul class="list-group">
+      <% @recent_sacentries.each do |sac_entry| %>
+        <li class="list-group-item">
+          <%= sac_entry.description %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <h5>Newest 10 categories created by users
+    </h5>
+    <ul class="list-group">
+      <% @newest_categories.each do |category| %>
+        <li class="list-group-item">
+          <%= category.name %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+    <div class="col-md-3">
+    <h5>Most popular categories
+    </h5>
+    <ul class="list-group">
+      <% @cat_hash.each do |name| %>
+        <li class="list-group-item">
+          <%= "#{name}" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
