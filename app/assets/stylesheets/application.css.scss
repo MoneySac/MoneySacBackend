@@ -20,9 +20,12 @@
 	z-index: 50;
 }
 
-.home{
+.home,
+.categories,
+.sac_entries,
+.category_user{
   height:100%;
-  
+
 	.backgroundimage{
 
 		height: 100%;
@@ -32,7 +35,7 @@
   		z-index: -1;
   
 		display: block;
-		background: image-url("background_blur.png") no-repeat center center fixed; 
+		background: image-url("background_blur2.png") no-repeat center center fixed; 
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
