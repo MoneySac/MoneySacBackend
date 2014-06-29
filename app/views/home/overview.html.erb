@@ -33,7 +33,7 @@
     <ul class="list-group">
       <% @cat_hash.sort_by{|k, v| v}.reverse.first(10).each do |key, value| %>
         <li class="list-group-item">
-          <span class="badge pull-right"> <%= value.to_s %> </span>
+          <span class="badge pull-right alert-success"> <%= value.to_s %> </span>
           <%= key %>
         </li>
       <% end %>
