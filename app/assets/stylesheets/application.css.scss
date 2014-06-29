@@ -19,3 +19,25 @@
 	position: relative;
 	z-index: 50;
 }
+
+.home{
+  height:100%;
+  
+	.backgroundimage{
+
+		height: 100%;
+	  	position: fixed;
+  		left: 0;
+  		right: 0;
+  		z-index: -1;
+  
+		display: block;
+		background: image-url("background_blur.png") no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+
+	  }
+
+}
