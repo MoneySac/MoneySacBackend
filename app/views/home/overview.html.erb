@@ -6,7 +6,7 @@
 <div class="col-md-10">
   <h1>Overview</h1>
   <div class="col-md-3">
-    <h5>Created last week
+    <h5>SacEntries created in the last 7 days
     </h5>
     <ul class="list-group">
       <% @recent_sacentries.each do |sac_entry| %>
@@ -31,9 +31,10 @@
     <h5>Most popular categories
     </h5>
     <ul class="list-group">
-      <% @cat_hash.each do |name| %>
+      <% @cat_hash.sort_by{|k, v| v}.reverse.first(10).each do |key, value| %>
         <li class="list-group-item">
-          <%= "#{name}" %>
+          <span class="badge pull-right"> <%= value.to_s %> </span>
+          <%= key %>
         </li>
       <% end %>
     </ul>
