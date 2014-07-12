@@ -1,0 +1,9 @@
+<%= form_for(@user, :html => { :multipart => true }) do |f| %>
+  <p>
+    <%= f.label :avatar %><br />
+    <%= f.file_field :avatar %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %> 

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'avatar/new'
+  get 'avatar/edit'
 
   get 'category_user/index'
 
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :notifications
 
   devise_for :users
+  get 'avatar/edit', :to => 'users#edit', :as => :user
   get 'welcome/index'
   get 'welcome/features'
   get 'welcome/contact'
