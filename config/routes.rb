@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'avatar/edit'
+  get 'avatar/index'
+  patch 'avatar/update'
 
   get 'category_user/index'
 

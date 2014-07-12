@@ -1,0 +1,13 @@
+<% content_for :for_head do %>
+  <title>Avatar</title>
+<% end %>
+
+<%= render "layouts/sidebar" %>
+<div class="col-md-10">
+<h1>Your Avatar</h1>
+<div class="col-md-7">
+  <%= image_tag @user.avatar.url, :class => "img-rounded"%><br/>
+  <%= link_to 'Edit', avatar_edit_path, :class => "btn btn-default btn-sm" %>
+
+</div>
+</div>

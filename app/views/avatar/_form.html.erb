@@ -1,9 +1,9 @@
-<%= form_for(@user, :html => { :multipart => true }) do |f| %>
+<%= form_for(@user, :url => avatar_update_path, :html => { :multipart => true } ) do |f| %>
   <p>
     <%= f.label :avatar %><br />
     <%= f.file_field :avatar %>
   </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+   <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %> 
