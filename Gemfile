@@ -47,3 +47,5 @@ gem 'devise'
 gem 'letter_opener', :group => :development
 
 gem 'htmlbeautifier'
+
+gem "paperclip", "~> 4.1"
