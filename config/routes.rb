@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'avatar/new'
+
   get 'category_user/index'
 
   get 'category_user/new'
