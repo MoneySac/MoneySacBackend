@@ -24,5 +24,6 @@ module SampleApp
     # needed that every controller can have his own stylesheet.
     config.assets.precompile << "*.css"
     config.action_mailer.delivery_method = :letter_opener
+    config.assets.initialize_on_precompile = false
   end
 end
