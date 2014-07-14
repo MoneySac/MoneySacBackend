@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   get 'home/overview'
 
   resources :notifications
-
+resources :users
   devise_for :users
-  get 'avatar/edit', :to => 'users#edit', :as => :user
+  #get 'avatar/edit', :to => 'users#edit', :as => :user
   get 'welcome/index'
   get 'welcome/features'
   get 'welcome/contact'
