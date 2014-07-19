@@ -27,7 +27,11 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @sac_entry.type_id %>
+    <% if @sac_entry.isIncome == true %>
+  <%= "Income" %>
+  <% else %>
+  <%= "Expense "%>
+  <% end %>
 </p>
 
 <p>

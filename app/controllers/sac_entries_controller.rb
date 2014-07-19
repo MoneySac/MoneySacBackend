@@ -85,6 +85,6 @@ class SacEntriesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def sac_entry_params
-    params.require(:sac_entry).permit(:id, :description, :amount, :category_id, :date, :type_id, :recurring)
+    params.require(:sac_entry).permit(:id, :description, :amount, :category_id, :date, :isIncome, :recurring)
   end
 end

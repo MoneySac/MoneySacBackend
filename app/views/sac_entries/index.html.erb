@@ -24,7 +24,11 @@
           <td><%= number_to_currency(sac_entry.amount) %></td>
           <td><%= sac_entry.category.name %></td>
           <td><%= sac_entry.date %></td>
-          <td><%= sac_entry.type_id %></td>
+          <td><% if sac_entry.isIncome == true %>
+                  <%= "Income" %>
+                <% else %>
+                  <%= "Expense "%>
+                <% end %></td></td>
           <td><%= sac_entry.recurring %></td>
           <td><%= link_to 'Show', sac_entry, :class => "btn btn-default btn-sm" %></td>
           <td><%= link_to 'Edit', edit_sac_entry_path(sac_entry), :class => "btn btn-default btn-sm" %></td>
