@@ -7,6 +7,20 @@ class SacEntriesController < ApplicationController
   def index
     #@sac_entries = SacEntry.all
     @sac_entries = SacEntry.where(user_id: current_user.id)
+    @sac_entry_months = Array.new
+    @months_back = 0
+    @years_back = 0
+    12.times do
+      @current = SacEntry.where('extract(month from date) = ? AND extract(year from date) = ?', Date.current.month-@months_back, Date.current.year-@years_back)
+      unless @current.empty?
+        @sac_entry_months << @current
+      end 
+      @months_back+=1
+      if @months_back == 0
+        @years_back+=1
+      end
+    end   
+    
   end
 
   # GET /sac_entries/1
