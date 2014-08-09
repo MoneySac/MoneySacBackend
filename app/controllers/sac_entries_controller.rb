@@ -10,6 +10,7 @@ class SacEntriesController < ApplicationController
     @sac_entry_months = Array.new
     @months_back = 0
     @years_back = 0
+    @month_sum = 0
     12.times do
       @current = SacEntry.where('extract(month from date) = ? AND extract(year from date) = ?', Date.current.month-@months_back, Date.current.year-@years_back)
       unless @current.empty?
@@ -42,7 +43,7 @@ class SacEntriesController < ApplicationController
         [s.name, s.id]
       end
     else
-      redirect_to categories_url, status: :found ,notice: 'You need to create a category before you start creating sacentries!'
+      redirect_to categories_url, status: :found ,notice: 'You need to create a category or subscribe to a public category before you start creating sacentries!'
     end
 
   end

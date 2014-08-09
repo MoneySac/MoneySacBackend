@@ -10,9 +10,9 @@
         <li class="list-group-item">
           <%= category.name %>
           <% if category.users.exists?(current_user) %>
-            <%= link_to 'Weg damit!', category_user_delete_path(:category_id => category) ,:class => 'btn btn-danger btn-xs', :type => 'button', :style => 'float:right'  %>
+            <%= link_to 'Unsubscribe', category_user_delete_path(:category_id => category) ,:class => 'btn btn-danger btn-xs', :type => 'button', :style => 'float:right'  %>
           <% else %>
-            <%= link_to 'Will ich!', category_user_new_path(:category_id => category) ,:class => 'btn btn-success btn-xs', :type => 'button', :style => 'float:right'  %>
+            <%= link_to 'Subscribe', category_user_new_path(:category_id => category) ,:class => 'btn btn-success btn-xs', :type => 'button', :style => 'float:right'  %>
           <% end %>
         </li>
       <% end %>

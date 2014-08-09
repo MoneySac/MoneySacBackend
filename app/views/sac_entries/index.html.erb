@@ -44,7 +44,21 @@
 <div class ="col-md-10">
   <% @sac_entry_months.each do |month| %>
     <div class="col-md-8">
-      <h1><%= month.first.date.strftime("%B") + " " + month.first.date.year.to_s %></h1>
+      <h1><%= month.first.date.strftime("%B") + " " + month.first.date.year.to_s  %></h1>
+      <% @month_sum = 0 %>
+      <% month.each do |sac_entry|  %>
+        <% if sac_entry.isIncome %>
+          <% @month_sum += sac_entry.amount %>
+        <% else %>
+          <% @month_sum -= sac_entry.amount %>
+        <% end %>
+      <% end %>
+      <% if @month_sum > 0 %>
+        <h3><p class="text-success"><%= "Total: " + @month_sum.to_s %></p></h3>
+      <% else %>
+        <h3><p class="text-danger"><%= "Total: " + @month_sum.to_s %></p></h3>
+      <% end %>
+
       <table class="table">
         <thead>
           <tr>
