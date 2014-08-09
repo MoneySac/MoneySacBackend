@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   #get 'avatar/edit', :to => 'users#edit', :as => :user
   get 'welcome/index'
   get 'welcome/features'
-  get 'welcome/contact'
+  get 'welcome/about'
 
   resources :sac_entries
 

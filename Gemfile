@@ -52,3 +52,5 @@ gem "paperclip", "~> 3.5.3"
 gem 'fog'
 
 gem 'rails_12factor', group: :production
+
+#ruby "1.9.3"
