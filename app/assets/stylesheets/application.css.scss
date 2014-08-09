@@ -43,9 +43,7 @@
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
-
 	  }
-
 }
 
 .list-group-item,
@@ -60,6 +58,10 @@
 .alert{
 	max-width: 400px;
 	margin:auto;
+}
+
+.form-control-width{
+  max-width: 195px;
 }
 
 /* User sign in and sign forms. */

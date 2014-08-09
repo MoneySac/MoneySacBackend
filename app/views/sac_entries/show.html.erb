@@ -1,43 +1,38 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Id:</strong>
-  <%= @sac_entry.id %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @sac_entry.description %>
-</p>
-
-<p>
-  <strong>Amount:</strong>
-  <%= @sac_entry.amount %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @sac_entry.category_id %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @sac_entry.date %>
-</p>
-
-<p>
-  <strong>Type:</strong>
+<div class="border-form-div">
+  <p id="notice"><%= notice %></p>
+  <p>
+    <strong>Id:</strong>
+    <%= @sac_entry.id %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @sac_entry.description %>
+  </p>
+  <p>
+    <strong>Amount:</strong>
+    <%= @sac_entry.amount %>
+  </p>
+  <p>
+    <strong>Category:</strong>
+    <%= @sac_entry.category_id %>
+  </p>
+  <p>
+    <strong>Date:</strong>
+    <%= @sac_entry.date %>
+  </p>
+  <p>
+    <strong>Type:</strong>
     <% if @sac_entry.isIncome == true %>
-  <%= "Income" %>
-  <% else %>
-  <%= "Expense "%>
-  <% end %>
-</p>
-
-<p>
-  <strong>Recurring:</strong>
-  <%= @sac_entry.recurring %>
-</p>
-
-<%= link_to 'Edit', edit_sac_entry_path(@sac_entry) %> |
-<%= link_to 'Back', sac_entries_path %>
+      <%= "Income" %>
+    <% else %>
+      <%= "Expense "%>
+    <% end %>
+  </p>
+  <p>
+    <strong>Recurring:</strong>
+    <%= @sac_entry.recurring %>
+  </p>
+  <%= link_to 'Edit', edit_sac_entry_path(@sac_entry) %>
+  |
+  <%= link_to 'Back', sac_entries_path %>
+</div>
