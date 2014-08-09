@@ -6,12 +6,11 @@
 
 <div class="col-md-10">
 <h1>Created categories</h1>
-<div class="col-md-7">
+<div class="col-md-5">
 <table class="table">
   <thead>
     <tr>
       <th class="col-md-4">Name</th>
-      <th class="col-md-2">Type</th>
       <th class="col-md-1" colspan="3"></th>
     </tr>
   </thead>
@@ -20,11 +19,6 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.name %></td>
-        <td>  <% if category.isIncome == true %>
-                  <%= "Income" %>
-                <% else %>
-                  <%= "Expense "%>
-                <% end %></td>
         <td><%= link_to 'Show', category, :class => "btn btn-default btn-sm " %></td>
         <td><%= link_to 'Edit', edit_category_path(category), :class => "btn btn-default btn-sm" %></td>
         <td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm btn-danger" %></td>
