@@ -14,13 +14,13 @@ class SacEntriesController < ApplicationController
       @current = SacEntry.where('extract(month from date) = ? AND extract(year from date) = ?', Date.current.month-@months_back, Date.current.year-@years_back)
       unless @current.empty?
         @sac_entry_months << @current
-      end 
+      end
       @months_back+=1
       if @months_back == 0
         @years_back+=1
       end
-    end   
-    
+    end
+
   end
 
   # GET /sac_entries/1
@@ -30,15 +30,20 @@ class SacEntriesController < ApplicationController
 
   # GET /sac_entries/new
   def new
-    @sac_entry = SacEntry.new
-    @categories = []
-    # add categories the user subscribed
-    Category.all.each do |c|
-      @categories << c if c.users.exists?(current_user)
+    if current_user.categories.exists?
+      @sac_entry = SacEntry.new
+      @categories = []
+      # add categories the user subscribed
+      Category.all.each do |c|
+        @categories << c if c.users.exists?(current_user)
+      end
+      @options = @categories.collect do |s|
+        [s.name, s.id]
+      end
+    else
+      redirect_to categories_url, status: :found ,notice: 'You need to create a category before you start creating sacentries!'
     end
-    @options = @categories.collect do |s|
-      [s.name, s.id]
-    end
+
   end
 
   # GET /sac_entries/1/edit

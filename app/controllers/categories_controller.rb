@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    @category = Category.new
+      @category = Category.new
   end
 
   # GET /categories/1/edit
@@ -29,6 +29,7 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
+
     @category = Category.new(category_params)
     # set owner to current user
     @category.user_id = current_user.id
@@ -62,29 +63,29 @@ class CategoriesController < ApplicationController
 
   # DELETE /categories/1
   # DELETE /categories/1.json
-   def destroy
+  def destroy
     if @category.users.exists?
       respond_to do |format|
-        format.html { redirect_to categories_url, notice: 'Sac entry is used by another user and can not be deleted.' }
+        format.html { redirect_to categories_url, notice: 'Category is currently in use by a user (you?) and can not be deleted.' }
         format.json { head :no_content }
       end
     else
       @category.destroy
       respond_to do |format|
-        format.html { redirect_to categories_url, notice: 'Sac entry was successfully destroyed.' }
+        format.html { redirect_to categories_url, notice: 'Category was successfully deleted.' }
         format.json { head :no_content }
       end
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_category
-      @category = Category.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_category
+    @category = Category.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def category_params
-      params.require(:category).permit(:id, :name, :isIncome)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def category_params
+    params.require(:category).permit(:id, :name, :isIncome)
+  end
 end
