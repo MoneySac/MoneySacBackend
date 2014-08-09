@@ -3,6 +3,7 @@
 <% end %>
 <%= render "layouts/sidebar" %>
 <div class="col-md-10">
+  <!--
   <h1>SacEntries</h1>
   <div class="col-md-8">
   <table class="table">
@@ -37,46 +38,46 @@
       <% end %>
     </tbody>
   </table>
-  <br>
+  <br>-->
   <%= link_to 'New Sac entry', new_sac_entry_path, :class => "btn btn-default" %>
 </div>
-
-<% @sac_entry_months.each do |month| %>
-<div class="col-md-8">
-<h1><%= month.first.date.strftime("%B") + " " + month.first.date.year.to_s %></h1>
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th class="col-md-2">Description</th>
-        <th class="col-md-1">Amount</th>
-        <th class="col-md-1">Category</th>
-        <th class="col-md-1">Date</th>
-        <th class="col-md-1">Type</th>
-        <th class="col-md-1">Recurring</th>
-        <th class="col-md-1" colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% month.each do |sac_entry| %>
-        <tr>
-          <td><%= sac_entry.description %></td>
-          <td><%= number_to_currency(sac_entry.amount) %></td>
-          <td><%= sac_entry.category.name %></td>
-          <td><%= sac_entry.date %></td>
-          <td><% if sac_entry.isIncome == true %>
+<div class ="col-md-10">
+  <% @sac_entry_months.each do |month| %>
+    <div class="col-md-8">
+      <h1><%= month.first.date.strftime("%B") + " " + month.first.date.year.to_s %></h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="col-md-2">Description</th>
+            <th class="col-md-1">Amount</th>
+            <th class="col-md-1">Category</th>
+            <th class="col-md-1">Date</th>
+            <th class="col-md-1">Type</th>
+            <th class="col-md-1">Recurring</th>
+            <th class="col-md-1" colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% month.each do |sac_entry| %>
+            <tr>
+              <td><%= sac_entry.description %></td>
+              <td><%= number_to_currency(sac_entry.amount) %></td>
+              <td><%= sac_entry.category.name %></td>
+              <td><%= sac_entry.date %></td>
+              <td><% if sac_entry.isIncome == true %>
                   <%= "Income" %>
                 <% else %>
                   <%= "Expense "%>
                 <% end %></td></td>
-          <td><%= sac_entry.recurring %></td>
-          <td><%= link_to 'Show', sac_entry, :class => "btn btn-default btn-sm" %></td>
-          <td><%= link_to 'Edit', edit_sac_entry_path(sac_entry), :class => "btn btn-default btn-sm" %></td>
-          <td><%= link_to 'Delete', sac_entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm btn-danger" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+            <td><%= sac_entry.recurring %></td>
+            <td><%= link_to 'Show', sac_entry, :class => "btn btn-default btn-sm" %></td>
+            <td><%= link_to 'Edit', edit_sac_entry_path(sac_entry), :class => "btn btn-default btn-sm" %></td>
+            <td><%= link_to 'Delete', sac_entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm btn-danger" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
   <% end %>
+</div>
 

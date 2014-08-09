@@ -16,8 +16,9 @@ class SacEntriesController < ApplicationController
         @sac_entry_months << @current
       end
       @months_back+=1
-      if @months_back == 0
+      if Date.current.month-@months_back == 0
         @years_back+=1
+        @months_back=(12-Date.current.month)*-1
       end
     end
 
