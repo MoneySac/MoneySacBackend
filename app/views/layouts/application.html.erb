@@ -12,10 +12,10 @@
   <body class="<%= controller.controller_name %>">
     <div class="backgroundimage"></div>
     <% if notice %>
-      <p class="alert alert-success" role="alert"><%= notice %></p>
+      <div class="alert alert-success" role="alert"><%= notice %></div>
     <% end %>
     <% if alert %>
-      <p class="alert alert-danger" role="alert"><%= alert %></p>
+      <div class="alert alert-danger" role="alert"><%= alert %></div>
     <% end %>
     <p id="auth-banner" class="navbar-text pull-right">
       <% if user_signed_in? %>
