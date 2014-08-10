@@ -69,12 +69,14 @@ class SacEntriesController < ApplicationController
     # set owner to current user
     @sac_entry.user_id = current_user.id
 
-  #  if sac_entry_params[:time_span_id].to_i > 1
-   #   TimeSpan.find(sac_entry_params[:time_span_id]).months.times do |n|
-    #    @sac_entry = SacEntry.new(sac_entry_params)
-     #   @sac_entry.date += (n.to_i-1).months
-   #   end
-  #  end
+    if sac_entry_params[:time_span_id].to_i > 1
+      TimeSpan.find(sac_entry_params[:time_span_id]).months.times do |n|
+        @sac_entry = SacEntry.new(sac_entry_params)
+        @sac_entry.date += n.to_i.months
+        @sac_entry.user_id = current_user.id
+        @sac_entry.save
+      end
+    end
 
     respond_to do |format|
       if @sac_entry.save
