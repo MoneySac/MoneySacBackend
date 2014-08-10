@@ -43,7 +43,7 @@ class SacEntriesController < ApplicationController
         [s.name, s.id]
       end
       @timespans = TimeSpan.all.collect do |t|
-        [t.months, t.id]
+        ["for the next " + t.months.to_s + " months", t.id]
       end
     else
       redirect_to categories_url, status: :found ,notice: 'You need to create a category or subscribe to a public category before you start creating sacentries!'
@@ -58,7 +58,7 @@ class SacEntriesController < ApplicationController
       [s.name, s.id]
     end
     @timespans = TimeSpan.all.collect do |t|
-      [t.months, t.id]
+      ["for the next " + t.months.to_s + " months", t.id]
     end
   end
 
