@@ -12,7 +12,7 @@ class SacEntriesController < ApplicationController
     @years_back = 0
     @month_sum = 0
     12.times do
-      @current = SacEntry.where('extract(month from date) = ? AND extract(year from date) = ?', Date.current.month-@months_back, Date.current.year-@years_back)
+      @current = SacEntry.where('extract(month from date) = ? AND extract(year from date) = ? AND user_id = ?', Date.current.month-@months_back, Date.current.year-@years_back, current_user.id)
       unless @current.empty?
         @sac_entry_months << @current
       end
@@ -68,6 +68,13 @@ class SacEntriesController < ApplicationController
     @sac_entry = SacEntry.new(sac_entry_params)
     # set owner to current user
     @sac_entry.user_id = current_user.id
+
+  #  if sac_entry_params[:time_span_id].to_i > 1
+   #   TimeSpan.find(sac_entry_params[:time_span_id]).months.times do |n|
+    #    @sac_entry = SacEntry.new(sac_entry_params)
+     #   @sac_entry.date += (n.to_i-1).months
+   #   end
+  #  end
 
     respond_to do |format|
       if @sac_entry.save
