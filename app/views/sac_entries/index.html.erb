@@ -14,7 +14,6 @@
         <th class="col-md-1">Category</th>
         <th class="col-md-1">Date</th>
         <th class="col-md-1">Type</th>
-        <th class="col-md-1">Recurring</th>
         <th class="col-md-1" colspan="3"></th>
       </tr>
     </thead>
@@ -30,7 +29,6 @@
                 <% else %>
                   <%= "Expense "%>
                 <% end %></td></td>
-          <td><%= sac_entry.recurring %></td>
           <td><%= link_to 'Show', sac_entry, :class => "btn btn-default btn-sm" %></td>
           <td><%= link_to 'Edit', edit_sac_entry_path(sac_entry), :class => "btn btn-default btn-sm" %></td>
           <td><%= link_to 'Delete', sac_entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm btn-danger" %></td>
@@ -66,8 +64,8 @@
             <th class="col-md-1">Amount</th>
             <th class="col-md-1">Category</th>
             <th class="col-md-1">Date</th>
+            <th class="col-md-1">Timespan</th>
             <th class="col-md-1">Type</th>
-            <th class="col-md-1">Recurring</th>
             <th class="col-md-1" colspan="3"></th>
           </tr>
         </thead>
@@ -78,12 +76,12 @@
               <td><%= number_to_currency(sac_entry.amount) %></td>
               <td><%= sac_entry.category.name %></td>
               <td><%= sac_entry.date %></td>
+              <td><%= sac_entry.time_span.months %></td>
               <td><% if sac_entry.isIncome == true %>
                   <%= "Income" %>
                 <% else %>
                   <%= "Expense "%>
                 <% end %></td></td>
-            <td><%= sac_entry.recurring %></td>
             <td><%= link_to 'Show', sac_entry, :class => "btn btn-default btn-sm" %></td>
             <td><%= link_to 'Edit', edit_sac_entry_path(sac_entry), :class => "btn btn-default btn-sm" %></td>
             <td><%= link_to 'Delete', sac_entry, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm btn-danger" %></td>

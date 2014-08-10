@@ -42,6 +42,9 @@ class SacEntriesController < ApplicationController
       @options = @categories.collect do |s|
         [s.name, s.id]
       end
+      @timespans = TimeSpan.all.collect do |t|
+        [t.months, t.id]
+      end
     else
       redirect_to categories_url, status: :found ,notice: 'You need to create a category or subscribe to a public category before you start creating sacentries!'
     end
@@ -53,6 +56,9 @@ class SacEntriesController < ApplicationController
     @options = Category.all.
     collect do |s|
       [s.name, s.id]
+    end
+    @timespans = TimeSpan.all.collect do |t|
+      [t.months, t.id]
     end
   end
 
@@ -106,6 +112,6 @@ class SacEntriesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def sac_entry_params
-    params.require(:sac_entry).permit(:id, :description, :amount, :category_id, :date, :isIncome, :recurring)
+    params.require(:sac_entry).permit(:id, :description, :amount, :category_id, :date, :isIncome, :time_span_id)
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809141913) do
+ActiveRecord::Schema.define(version: 20140810092523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,11 +43,17 @@ ActiveRecord::Schema.define(version: 20140809141913) do
     t.decimal  "amount"
     t.integer  "category_id"
     t.date     "date"
-    t.boolean  "recurring"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.boolean  "isIncome",    default: false
+    t.boolean  "isIncome",     default: false
+    t.integer  "time_span_id"
+  end
+
+  create_table "time_spans", force: true do |t|
+    t.integer  "months"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
