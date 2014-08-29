@@ -1,17 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   description: firstSacEntry
   amount: 9.99
-  category_id: 1005
+  category_id: 1
   date: 2014-05-21
-  type_id: 1
-  recurring: false
+  isIncome: true
+  time_span_id: 1
+  user_id: 1
 
 two:
+  id: 2
   description: secondSacEntry
   amount: 9.99
-  category_id: 1006
+  category_id: 2
   date: 2014-05-22
-  type_id: 2
-  recurring: true
+  isIncome: true
+  time_span_id: 2
+  user_id: 1

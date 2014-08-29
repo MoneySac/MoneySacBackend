@@ -25,6 +25,9 @@ Rails.application.configure do
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
+  
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 
   config.assets.precompile = [/^[-_a-zA-Z0-9]*\..*/]
   # Do not fallback to assets pipeline if a precompiled asset is missed.

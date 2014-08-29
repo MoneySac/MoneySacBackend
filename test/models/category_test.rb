@@ -5,7 +5,6 @@ class CategoryTest < ActiveSupport::TestCase
     category = Category.new
     assert category.invalid?
     assert category.errors[:name].any?
-    assert category.errors[:type_id].any?
   end
 
   test "category type_id must be greater than or equal to zero" do

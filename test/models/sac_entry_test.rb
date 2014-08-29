@@ -8,19 +8,21 @@ class SacEntryTest < ActiveSupport::TestCase
     assert sacentry.errors[:amount].any?
     assert sacentry.errors[:category_id].any?
     assert sacentry.errors[:date].any?
-    assert sacentry.errors[:type_id].any?
+    assert sacentry.errors[:isIncome].any?
+    assert sacentry.errors[:time_span_id].any?
+    assert sacentry.errors[:user_id].any?
   end
 
   test "sacentrys category_id matching works" do
   	category = Category.all.first
     sacentry = SacEntry.new
-    sacentry.category_id = category.id
+    sacentry.category_id = Category.all.first.id
     assert_equal(sacentry.category_id, category.id)
   end
 
   test "sacentry must have an existing category_id" do
     sacentry = SacEntry.new
-    sacentry.category_id = 1337
+    sacentry.category_id = 1
     assert sacentry.invalid? 
   end 
 end

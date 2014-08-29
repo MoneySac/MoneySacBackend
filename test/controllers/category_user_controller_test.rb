@@ -1,4 +1,5 @@
 require 'test_helper'
+include Devise::TestHelpers
 
 class CategoryUserControllerTest < ActionController::TestCase
   test "should get index" do
