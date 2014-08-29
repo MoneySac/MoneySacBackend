@@ -2,13 +2,13 @@ require 'test_helper'
 include Devise::TestHelpers
 
 class CategoryUserControllerTest < ActionController::TestCase
-  test "should get index" do
-    get :index
-    assert_response :success
+  setup do
+    @user = users(:one)
+    sign_in @user
   end
 
-  test "should get new" do
-    get :new
+  test "should get index" do
+    get :index
     assert_response :success
   end
 
@@ -17,9 +17,5 @@ class CategoryUserControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get delete" do
-    get :delete
-    assert_response :success
-  end
 
 end

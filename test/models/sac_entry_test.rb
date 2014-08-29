@@ -8,9 +8,6 @@ class SacEntryTest < ActiveSupport::TestCase
     assert sacentry.errors[:amount].any?
     assert sacentry.errors[:category_id].any?
     assert sacentry.errors[:date].any?
-    assert sacentry.errors[:isIncome].any?
-    assert sacentry.errors[:time_span_id].any?
-    assert sacentry.errors[:user_id].any?
   end
 
   test "sacentrys category_id matching works" do

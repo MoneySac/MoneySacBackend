@@ -10,22 +10,12 @@ class SacEntriesControllerTest < ActionController::TestCase
       description: 'testSac', 
       amount: 22,
       category_id: 1,
+      isIncome: 0,
       date: Time.now,
-      type_id: 2,
-      recurring: true
+      time_span_id: 1
     }
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:sac_entries)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
 
   test "should create sac_entry" do
     assert_difference('SacEntry.count') do
